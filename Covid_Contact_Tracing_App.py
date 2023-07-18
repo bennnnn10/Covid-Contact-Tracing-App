@@ -25,13 +25,18 @@ class AddSearch(tk.Tk):
         AddEntryButton = tk.Button(frame, text="Add Entry", command=self.open_add_entry)
         AddEntryButton.pack()
 
-        SearchEntryButton = tk.Button(frame, text="Search Entry", command=self.destroy)
+        SearchEntryButton = tk.Button(frame, text="Search Entry", command=self.open_search_entry)
         SearchEntryButton.pack()
 
     def open_add_entry(self):
         self.destroy()
         entry = AddEntry()
         entry.mainloop()
+
+    def open_search_entry(self):
+        self.destroy()
+        search = SearchEntry()
+        search.mainloop()
 
 if __name__ == "__main__":
     app = AddSearch()
