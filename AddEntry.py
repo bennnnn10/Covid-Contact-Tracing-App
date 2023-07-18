@@ -18,9 +18,16 @@ class AddEntry(tk.Tk):
         name_label = tk.Label(self, text="Name:")
         name_label.place(x=5, y=80)
 
+        age_label = tk.Label(self, text="Age:")
+        age_label.place(x=5, y=110)
+
+
         #Create an entry box
         name_entry = tk.Entry(self, width=50)  
         name_entry.place(x=120, y=80)
+
+        age_entry = tk.Entry(self, width=50)  
+        age_entry.place(x=120, y=110)
 
 if __name__ == "__main__":
     entry = AddEntry()
