@@ -14,3 +14,15 @@ class AddSearch(tk.Tk):
 
         self.header_label = tk.Label(self, text="Covid-19: Contact Tracing App", font=("Helvetica", 14, "bold"))
         self.header_label.pack
+
+        AddEntryButton = tk.Button(self, text="Add Entry", command=self.destroy)
+        AddEntryButton.pack
+
+        SearchEntryButton = tk.Button(self, text="Search Entry", command=self.destroy)
+        SearchEntryButton.pack
+
+        self.mainloop
+
+if __name__ == "__main__":
+    app = AddSearch()
+    app.mainloop()
