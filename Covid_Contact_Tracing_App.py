@@ -11,6 +11,7 @@ class AddSearch(tk.Tk):
 
         self.title("Contact Tracing App")
         self.geometry("700x500")
+        self.pack_propagate(0)  # Prevent the window from resizing
 
         # Create a frame to hold the labels and buttons
         frame = tk.Frame(self)
