@@ -24,6 +24,8 @@ class AddEntry(tk.Tk):
         sex_label = tk.Label(self, text="Sex:")
         sex_label.place(x=5, y=140)
 
+        contact_number_label = tk.Label(self, text="Contact #:")
+        contact_number_label.place(x=5, y=170)
 
         #Create an entry box
         name_entry = tk.Entry(self, width=50)  
@@ -34,6 +36,9 @@ class AddEntry(tk.Tk):
 
         sex_entry = tk.Entry(self, width=50)  
         sex_entry.place(x=120, y=140)
+
+        contact_number_entry = tk.Entry(self, width=50)  
+        contact_number_entry.place(x=120, y=170)
 
 if __name__ == "__main__":
     entry = AddEntry()
