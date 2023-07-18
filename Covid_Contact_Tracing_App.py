@@ -12,13 +12,17 @@ class AddSearch(tk.Tk):
         self.title("Contact Tracing App")
         self.geometry("700x500")
 
-        self.header_label = tk.Label(self, text="Covid-19: Contact Tracing App", font=("Helvetica", 14, "bold"))
+        # Create a frame to hold the labels and buttons
+        frame = tk.Frame(self)
+        frame.place(relx=0.5, rely=0.5, anchor='center')
+
+        self.header_label = tk.Label(frame, text="Covid-19: Contact Tracing App", font=("Helvetica", 14, "bold"))
         self.header_label.pack()
 
-        AddEntryButton = tk.Button(self, text="Add Entry", command=self.destroy)
+        AddEntryButton = tk.Button(frame, text="Add Entry", command=self.destroy)
         AddEntryButton.pack()
 
-        SearchEntryButton = tk.Button(self, text="Search Entry", command=self.destroy)
+        SearchEntryButton = tk.Button(frame, text="Search Entry", command=self.destroy)
         SearchEntryButton.pack()
 
         self.mainloop
