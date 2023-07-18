@@ -3,6 +3,8 @@
 #Object-Oriented Programming
 
 import tkinter as tk
+from AddEntry import AddEntry
+from SearchEntry import SearchEntry
 
 class AddSearch(tk.Tk):
     
@@ -20,13 +22,16 @@ class AddSearch(tk.Tk):
         self.header_label = tk.Label(frame, text="Covid-19: Contact Tracing App", font=("Helvetica", 14, "bold"))
         self.header_label.pack()
 
-        AddEntryButton = tk.Button(frame, text="Add Entry", command=self.destroy)
+        AddEntryButton = tk.Button(frame, text="Add Entry", command=self.open_add_entry)
         AddEntryButton.pack()
 
         SearchEntryButton = tk.Button(frame, text="Search Entry", command=self.destroy)
         SearchEntryButton.pack()
 
-        self.mainloop
+    def open_add_entry(self):
+        self.destroy()
+        entry = AddEntry()
+        entry.mainloop()
 
 if __name__ == "__main__":
     app = AddSearch()
