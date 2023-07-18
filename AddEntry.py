@@ -7,3 +7,7 @@ class AddEntry(tk.Tk):
 
         self.title("Add Entry")
         self.geometry("700x500")
+
+if __name__ == "__main__":
+    entry = AddEntry()
+    entry.mainloop()
