@@ -1,5 +1,6 @@
 import tkinter as tk
 import csv
+import tkinter.messagebox as messagebox
 from PIL import Image, ImageTk
 from tkinter import ttk
 
@@ -166,15 +167,21 @@ class AddEntry(tk.Tk):
         contact_number = self.contact_number_entry.get()
         address = self.address_entry.get()
         symptoms = [
-            self.var1.get(),
-            self.var2.get(),
-            self.var3.get(),
-            self.var4.get(),
-            self.var5.get(),
-            self.var6.get(),
-            self.var7.get(),
-            self.var8.get()
+            "No" if value == 0 else "Yes" for value in [
+                self.var1.get(),
+                self.var2.get(),
+                self.var3.get(),
+                self.var4.get(),
+                self.var5.get(),
+                self.var6.get(),
+                self.var7.get(),
+                self.var8.get()
+            ]
         ]
+    
+        if any(field == "" for field in [name, age, sex, contact_number, address]):
+            messagebox.showwarning("Incomplete Data", "Please fill in all the required informations.")
+            return
 
         data = [name, age, sex, contact_number, address] + symptoms
         file = open("gathered_information.csv", mode="a", newline="")
