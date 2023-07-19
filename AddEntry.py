@@ -140,6 +140,10 @@ class AddEntry(tk.Tk):
 
         no_label_8_button = tk.Radiobutton(self, variable=var8, value=0, text="No")
         no_label_8_button.place(x=357, y=400)
+         
+        #Submit Button
+        submit_button = tk.Button(self, text="Submit", command=self.destroy)
+        submit_button.place(x=320, y=450)
 
 if __name__ == "__main__":
     entry = AddEntry()
