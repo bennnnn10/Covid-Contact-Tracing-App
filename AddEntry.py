@@ -207,6 +207,9 @@ class AddEntry(tk.Tk):
         self.var8.set(0)
 
         self.destroy()
+        from Gathered_Info import GatheredInformation
+        gather = GatheredInformation()
+        gather.mainloop()
 
 if __name__ == "__main__":
     entry = AddEntry()
