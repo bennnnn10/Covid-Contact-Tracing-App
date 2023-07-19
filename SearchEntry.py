@@ -27,6 +27,15 @@ class SearchEntry(tk.Tk):
         search_button = tk.Button(self, text="Search")
         search_button.place(x=325, y=27)
 
+        go_back_to_main = tk.Button(self, text="Back", command=self.back_to_main)
+        go_back_to_main.place(x=340, y=450)
+
+    def back_to_main(self):
+        self.destroy()
+        from Covid_Contact_Tracing_App import AddSearch
+        entry = AddSearch()
+        entry.mainloop()
+
 if __name__ == "__main__":
     search = SearchEntry()
     search.mainloop()
