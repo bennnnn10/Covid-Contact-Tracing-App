@@ -189,6 +189,23 @@ class AddEntry(tk.Tk):
         writer.writerow(data)
         file.close()
 
+        # Clear entry fields
+        self.name_entry.delete(0, 'end')
+        self.age_entry.delete(0, 'end')
+        self.sex_entry.delete(0, 'end')
+        self.contact_number_entry.delete(0, 'end')
+        self.address_entry.delete(0, 'end')
+
+        # Reset checkboxes
+        self.var1.set(0)
+        self.var2.set(0)
+        self.var3.set(0)
+        self.var4.set(0)
+        self.var5.set(0)
+        self.var6.set(0)
+        self.var7.set(0)
+        self.var8.set(0)
+
         self.destroy()
 
 if __name__ == "__main__":
