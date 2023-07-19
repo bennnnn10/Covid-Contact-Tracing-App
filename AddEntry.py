@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import Image, ImageTk
 
 class AddEntry(tk.Tk):
 
@@ -7,6 +8,15 @@ class AddEntry(tk.Tk):
 
         self.title("Add Entry")
         self.geometry("700x500")
+
+        # Load the background image
+        bg_image = Image.open(r"C:\Users\Ruben\OneDrive\Pictures\Covid-19\covid.jpg")
+        bg_image = bg_image.resize((900, 500))
+        self.background = ImageTk.PhotoImage(bg_image)
+
+        # Create a Label widget to display the background image
+        bg_label = tk.Label(self, image=self.background)
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
         HDCF = tk.Label(self, text="Pursuant to Republic Act 11332, you are required to provide truthful information", font=("Helvetica", 12, "bold"))
         HDCF.place(x=50, y=20)
