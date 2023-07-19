@@ -25,15 +25,11 @@ class AddSearch(tk.Tk):
         bg_label = tk.Label(self, image=self.background, highlightthickness=0)
         bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-        # Create a frame to hold the labels and buttons
-        frame = tk.Frame(self)
-        frame.place(relx=0.5, rely=0.5, anchor='center')
+        AddEntryButton = tk.Button(self, text="Add Entry", command=self.open_add_entry)
+        AddEntryButton.place(x=320, y=280)
 
-        AddEntryButton = tk.Button(frame, text="Add Entry", command=self.open_add_entry)
-        AddEntryButton.pack()
-
-        SearchEntryButton = tk.Button(frame, text="Search Entry", command=self.open_search_entry)
-        SearchEntryButton.pack()
+        SearchEntryButton = tk.Button(self, text="Search Entry", command=self.open_search_entry)
+        SearchEntryButton.place(x=313, y=310)
 
     def open_add_entry(self):
         self.destroy()
