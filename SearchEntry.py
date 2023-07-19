@@ -18,11 +18,14 @@ class SearchEntry(tk.Tk):
         bg_label = tk.Label(self, image=self.background, highlightthickness=0)
         bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-        search = tk.Label(self, text="Search")
-        search.grid(row=2, column=0, sticky=tk.E)
-        
-        SearchEntry = tk.Entry(self)
-        SearchEntry.grid(row=2, column=1)
+        search = tk.Label(self, text="Enter the Name:")
+        search.place(x=30, y=30)
+
+        search_entry = tk.Entry(self, width=30)
+        search_entry.place(x=130, y=30)
+
+        search_button = tk.Button(self, text="Search")
+        search_button.place(x=325, y=27)
 
 if __name__ == "__main__":
     search = SearchEntry()
