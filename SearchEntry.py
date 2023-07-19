@@ -1,4 +1,5 @@
 import tkinter as tk
+import csv
 from PIL import Image, ImageTk
 
 class SearchEntry(tk.Tk):
@@ -21,14 +22,27 @@ class SearchEntry(tk.Tk):
         search = tk.Label(self, text="Enter the Name:")
         search.place(x=30, y=30)
 
-        search_entry = tk.Entry(self, width=30)
-        search_entry.place(x=130, y=30)
+        self.search_entry = tk.Entry(self, width=30)
+        self.search_entry.place(x=130, y=30)
 
         search_button = tk.Button(self, text="Search")
         search_button.place(x=325, y=27)
 
         go_back_to_main = tk.Button(self, text="Back", command=self.back_to_main)
-        go_back_to_main.place(x=340, y=450)
+        go_back_to_main.place(x=300, y=450)
+
+        close = tk.Button(self, text="Close", command=self.destroy)
+        close.place(x=360, y=450)
+
+    def search_info(self):
+        name_to_search = self.search_entry.get()
+
+        with open("gathered_information.csv", mode="r") as file:
+            reader = csv.reader(file)
+            found_entries = []
+            for row in reader:
+                if row[0] == name_to_search:
+                    found_entries.append(row)
 
     def back_to_main(self):
         self.destroy()
