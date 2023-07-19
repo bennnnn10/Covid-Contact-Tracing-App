@@ -136,14 +136,23 @@ class AddEntry(tk.Tk):
         label_8.place(x=70, y=370)
 
         yes_label_8_button = tk.Radiobutton(self, variable=var8, value=1, text="Yes")
-        yes_label_8_button.place(x=290, y=400)
+        yes_label_8_button.place(x=300, y=400)
 
         no_label_8_button = tk.Radiobutton(self, variable=var8, value=0, text="No")
-        no_label_8_button.place(x=357, y=400)
+        no_label_8_button.place(x=360, y=400)
          
         #Submit Button
         submit_button = tk.Button(self, text="Submit", command=self.destroy)
-        submit_button.place(x=320, y=450)
+        submit_button.place(x=305, y=450)
+
+        go_back_to_main = tk.Button(self, text="Back", command=self.back_to_main)
+        go_back_to_main.place(x=365, y=450)
+
+    def back_to_main(self):
+        self.destroy()
+        from Covid_Contact_Tracing_App import AddSearch
+        entry = AddSearch()
+        entry.mainloop()
 
 if __name__ == "__main__":
     entry = AddEntry()
