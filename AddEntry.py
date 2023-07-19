@@ -63,6 +63,7 @@ class AddEntry(tk.Tk):
         var4 = tk.IntVar()
         var5 = tk.IntVar()
         var6 = tk.IntVar()
+        var7 = tk.IntVar()
 
         questions = tk.Label(self, text="Do you and/or your child have the following or have had the following in the last 14 days?", font=("Helvetica", 11, "bold"))
         questions.place(x=33, y=180)
@@ -120,6 +121,15 @@ class AddEntry(tk.Tk):
 
         no_check_button_6 = tk.Radiobutton(self, variable=var6, value=0, text="No")
         no_check_button_6.place(x=337, y=320)
+
+        check_button_7_label = tk.Label(self, text="Excessive Fatigue?", font=("Helvetica", 11, "bold"))
+        check_button_7_label.place(x=480, y=290)
+
+        yes_check_button_7 = tk.Radiobutton(self, variable=var7, value=1, text="Yes")
+        yes_check_button_7.place(x=480, y=320)
+
+        no_check_button_7= tk.Radiobutton(self, variable=var7, value=0, text="No")
+        no_check_button_7.place(x=547, y=320)
 
 if __name__ == "__main__":
     entry = AddEntry()
