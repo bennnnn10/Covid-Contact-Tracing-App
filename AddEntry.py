@@ -56,6 +56,12 @@ class AddEntry(tk.Tk):
         address_entry = tk.Entry(self, width=93) 
         address_entry.place(x=101, y=140)
 
+        questions = tk.Label(self, text="Do you and/or your child have the following or have had the following in the last 14 days?", font=("Helvetica", 11, "bold"))
+        questions.place(x=33, y=180)
+        
+        yes_check_button_1_label = tk.Label(self, text="Fever or chills?", font=("Helvetica", 11, "bold"))
+        yes_check_button_1_label.place(x=33, y=220)
+
 if __name__ == "__main__":
     entry = AddEntry()
     entry.mainloop()
