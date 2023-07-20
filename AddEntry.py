@@ -60,14 +60,14 @@ class AddEntry(tk.Tk):
         self.address_entry.place(x=101, y=140)
 
         #Check button
-        self.var1 = tk.IntVar()
-        self.var2 = tk.IntVar()
-        self.var3 = tk.IntVar()
-        self.var4 = tk.IntVar()
-        self.var5 = tk.IntVar()
-        self.var6 = tk.IntVar()
-        self.var7 = tk.IntVar()
-        self.var8 = tk.IntVar()
+        self.var1 = tk.IntVar(value='')
+        self.var2 = tk.IntVar(value='')
+        self.var3 = tk.IntVar(value='')
+        self.var4 = tk.IntVar(value='')
+        self.var5 = tk.IntVar(value='')
+        self.var6 = tk.IntVar(value='')
+        self.var7 = tk.IntVar(value='')
+        self.var8 = tk.IntVar(value='')
 
         style = ttk.Style()
         style.configure("Custom.TRadiobutton", background="lightgray", foreground="black")
@@ -160,6 +160,15 @@ class AddEntry(tk.Tk):
         entry = AddSearch()
         entry.mainloop()
 
+    def show_success_message(self):
+        messagebox.showinfo("Success", "Information has been saved successfully.")
+        self.destroy()
+
+        from Covid_Contact_Tracing_App import AddSearch
+        entry = AddSearch()
+        entry.mainloop()
+
+
     def submit_entry(self):
         name = self.name_entry.get()
         age = self.age_entry.get()
@@ -206,11 +215,7 @@ class AddEntry(tk.Tk):
         self.var7.set(0)
         self.var8.set(0)
 
-        self.destroy()
-        from Gathered_Info import GatheredInformation
-        gather = GatheredInformation()
-        gather.mainloop()
-
+        self.show_success_message()
 if __name__ == "__main__":
     entry = AddEntry()
     entry.mainloop()
